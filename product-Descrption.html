@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+		<link rel="stylesheet" href="css/mystyles.css">
+	
+
+<script>
+function popupfunction(x)
+{
+	 document.getElementById('popup'+x).style.display='block';
+	 document.getElementById('fade'+x).style.display='block';
+}
+
+function popupclose(x)
+{
+	document.getElementById('popup'+x).style.display='none';
+	document.getElementById('fade'+x).style.display='none';
+}
+
+function add_to_cart(item)
+{
+	document.getElementById("mycart").innerHTML+=item+"<br>";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1 align="center"> JBU Online Store </h1>
+	
+	
+	<ul>
+		<li class="menu-item"><a href="#" class="drp">Books </a>
+			<div class="menu-content">
+				
+				<a  href="add_book.php">Add Book</a><br>
+				<a  href="remove_book.php">Remove Book</a><br>
+				<a href="display_books.php">Display all Books</a><br>
+			</div>
+		
+		</li>
+		
+		<li class="menu-item"><a href="#" class="drp">Books </a>
+		<div class="menu-content">
+			<a  href="add_book.php">Add Book</a><br>
+			<a  href="remove_book.php">Remove Book</a><br>
+			<a href="display_books.php">Display all Books</a><br>
+		</div>
+		
+		</li>
+		
+		<li class="menu-item"><a href="#" class="drp">Users </a>	
+		<div class="menu-content">
+			<a href="add_user.php">Add User</a><br>
+			<a href="remove_user.php">Remove User</a><br>
+			<a href="display_users.php">Display all Users</a><br>
+		</div>
+		</li>
+	</ul>
+	<h2> Welcome to JBU's Online store - open for faculty/staff and students!</h2>
+
+
+
+	<table align=center> 
+	<tr><td align="center">
+			<a href = "javascript:void(0)" onclick ="popupfunction('1')" class=linktext>
+			<img src="img/dell.jpg" width=80% /><br>Del Laptop
+		</a><br><br>
+		<button onclick="add_to_cart('Del Laptop')">Add to Cart</button>
+	</td>
+ 
+		<div id="popup1" class="white_content">
+		<p align=center><br><br>
+			<img src="img/dell.jpg" width=60% /><br>Del Laptop<br>Price:$600<br>Rating: 4<br>
+			<a href = "javascript:void(0)" onclick = "popupclose('1')" class=linktext>close window</a>
+			</p>
+		</div>
+		
+		<div id="fade1" class="black_content"></div>
+	
+
+
+	<td align=center> 
+			<a href = "javascript:void(0)" onclick = "popupfunction('2')" class=linktext>
+			<img src="img/mac.jpg" width=80% /><br>MacBook
+			</a><br><br>
+		<button onclick="add_to_cart('MacBook')">Add to Cart</button>
+	</td>
+		<div id="popup2" class="white_content">
+		<p align=center><br><br>
+			<img src="img/mac.jpg" width=30% /><br>MacBook<br><br>Price:$1000<br>Rating: 5<br>
+			<a href = "javascript:void(0)" onclick = "popupclose('2')" class=linktext>close window</a>
+			</p>
+		</div>
+		
+		<div id="fade2" class="black_content"></div>
+
+	</tr></table>
+    
+	<div class="cart-img">
+		<img src="img/cart.png" align="right" onclick="show_cart()" width=10% />
+	</div>
+	
+	<div class="mycartStyle" id="mycart" style="display:none;">
+		Hello
+	</div>
+		
+	<script>
+		function show_cart()
+		{
+			document.getElementById("mycart").style.display = "block";
+		}
+	</script>
+
+	
+	
+	
+</body>
+</html>
